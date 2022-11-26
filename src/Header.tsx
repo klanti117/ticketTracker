@@ -1,6 +1,10 @@
+import Button from "./Button"
+
 const Header = () => {
     return (
-        <header style = {headerStyle}>Task Tacker from Header component</header>
+        <>
+        <header style={headerStyle}>Task Tacker</header>
+        <Button color={'green'} text={'Add'} /></>
     )
 }
 
