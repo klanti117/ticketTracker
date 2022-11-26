@@ -1,8 +1,10 @@
+import Header from "./Header"
+
 function App() {
 
   return (
-    <div >
-      <h1>Task Tacker</h1>
+    <div className="container">
+      <Header/>
     </div>
   )
 }
