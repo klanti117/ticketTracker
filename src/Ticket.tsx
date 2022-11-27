@@ -4,12 +4,14 @@ import { FaTimes } from 'react-icons/fa'
 export type ticketProp = {
     ticketItem: Ticket
     onDelete: (ticket:Ticket) => void
-    onToggleCompletion: () => void
+    onToggleCompletion: (ticket:Ticket) => void
 }
 const Ticket: FC<ticketProp> = 
 ({ ticketItem, onDelete, onToggleCompletion }) => {
     return (
-        <div className="ticket" onDoubleClick={onToggleCompletion}>
+        <div 
+            className={`ticket ${ticketItem.isComplete ? '':'not-complete'}`}
+            onDoubleClick={ () => onToggleCompletion(ticketItem)}>
             <h3>{ticketItem.text}
                 <FaTimes style={{color:'red', 
                 cursor:'pointer'}} 

@@ -20,6 +20,7 @@ const intialTicketsArr: Array<Ticket> = [
     isComplete: false,
   }
 ]
+
 function App() {
   const [tickets, setTickets] = useState(intialTicketsArr)
 
@@ -30,8 +31,10 @@ function App() {
   }
 
   // toggle completion
-  const onToggleCompletion = () => {
-    console.log("toggleCompletion")
+  const onToggleCompletion = (selectedTicket: Ticket) => {
+    // console.log("toggleCompletion")
+    setTickets(tickets.map((t) => t === selectedTicket ? 
+      {...t, isComplete: !t.isComplete} : t))
   }
 
   return (

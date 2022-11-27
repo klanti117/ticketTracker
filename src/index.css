@@ -61,7 +61,7 @@ body {
     cursor: pointer;
 }
 
-.ticket.reminder {
+.ticket.not-complete {
     border-left: 5px solid green;
 }
 

@@ -4,7 +4,7 @@ import Ticket, {ticketProp} from "./Ticket"
 type ticketsProp = {
     tickets: Array<Ticket>,
     onDelete: (ticket:Ticket) => void
-    onToggleCompletion: () => void
+    onToggleCompletion: (ticket:Ticket) => void
 }
 
 const Tickets: FC<ticketsProp> = 
