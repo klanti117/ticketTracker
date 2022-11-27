@@ -4,9 +4,11 @@ import Ticket, {ticketProp} from "./Ticket"
 type ticketsProp = {
     tickets: Array<Ticket>,
     onDelete: (ticket:Ticket) => void
+    onToggleCompletion: (ticket:Ticket) => void
 }
 
-const Tickets: FC<ticketsProp> = ({ tickets, onDelete }) => {
+const Tickets: FC<ticketsProp> = 
+({ tickets, onDelete, onToggleCompletion }) => {
     return (
         <>
             {tickets.map(
@@ -14,7 +16,8 @@ const Tickets: FC<ticketsProp> = ({ tickets, onDelete }) => {
                     // <h3 key={idx}>{ticket.text}</h3>
                     <Ticket key={idx} 
                     ticketItem={ticket}
-                    onDelete={onDelete}/>
+                    onDelete={onDelete}
+                    onToggleCompletion={onToggleCompletion}/>
                 ))}
         </>
     )
