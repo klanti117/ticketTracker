@@ -29,13 +29,19 @@ function App() {
     setTickets(tickets.filter(t => t !== selectedTicket))
   }
 
+  // toggle completion
+  const onToggleCompletion = () => {
+    console.log("toggleCompletion")
+  }
+
   return (
     <div className="container">
       <Header/>
       {tickets.length>0 ? 
         <Tickets 
           tickets={tickets} 
-          onDelete={onDelete}/>
+          onDelete={onDelete}
+          onToggleCompletion={onToggleCompletion}/>
         :(" No tickets to show")}
     </div>
   )
