@@ -24,16 +24,19 @@ function App() {
   const [tickets, setTickets] = useState(intialTicketsArr)
 
   //Delete tickets
-  const onDelete = () => {
-    console.log("x icon clicked")
+  const onDelete = (selectedTicket: Ticket) => {
+    // console.log("x icon clicked")
+    setTickets(tickets.filter(t => t !== selectedTicket))
   }
 
   return (
     <div className="container">
       <Header/>
-      <Tickets 
-        tickets={tickets} 
-        onDelete={onDelete}/>
+      {tickets.length>0 ? 
+        <Tickets 
+          tickets={tickets} 
+          onDelete={onDelete}/>
+        :(" No tickets to show")}
     </div>
   )
 }

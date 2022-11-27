@@ -3,7 +3,7 @@ import Ticket, {ticketProp} from "./Ticket"
 
 type ticketsProp = {
     tickets: Array<Ticket>,
-    onDelete: () => void
+    onDelete: (ticket:Ticket) => void
 }
 
 const Tickets: FC<ticketsProp> = ({ tickets, onDelete }) => {
