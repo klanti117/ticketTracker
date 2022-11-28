@@ -2,6 +2,7 @@ import { useState } from "react"
 import Header from "./Header"
 import './index.css'
 import Tickets from "./Tickets"
+import AddTicket from "./AddTicket"
 
 const intialTicketsArr: Array<Ticket> = [
   {
@@ -40,6 +41,7 @@ function App() {
   return (
     <div className="container">
       <Header/>
+      <AddTicket/>
       {tickets.length>0 ? 
         <Tickets 
           tickets={tickets} 
