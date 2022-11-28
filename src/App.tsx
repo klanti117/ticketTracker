@@ -38,10 +38,16 @@ function App() {
       {...t, isComplete: !t.isComplete} : t))
   }
 
+  // Add ticket 
+  const onAdd = (newTicket: Ticket) => {
+    // console.log("onAdd")
+    setTickets([...tickets, newTicket])
+  }
+
   return (
     <div className="container">
       <Header/>
-      <AddTicket/>
+      <AddTicket onAdd={onAdd}/>
       {tickets.length>0 ? 
         <Tickets 
           tickets={tickets} 
