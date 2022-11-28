@@ -2,6 +2,7 @@ import { useState } from "react"
 import Header from "./Header"
 import './index.css'
 import Tickets from "./Tickets"
+import AddTicket from "./AddTicket"
 
 const intialTicketsArr: Array<Ticket> = [
   {
@@ -37,9 +38,16 @@ function App() {
       {...t, isComplete: !t.isComplete} : t))
   }
 
+  // Add ticket 
+  const onAdd = (newTicket: Ticket) => {
+    // console.log("onAdd")
+    setTickets([...tickets, newTicket])
+  }
+
   return (
     <div className="container">
       <Header/>
+      <AddTicket onAdd={onAdd}/>
       {tickets.length>0 ? 
         <Tickets 
           tickets={tickets} 

@@ -1,5 +1,5 @@
 import { FC } from "react"
-import Ticket, {ticketProp} from "./Ticket"
+import Ticket from "./Ticket"
 
 type ticketsProp = {
     tickets: Array<Ticket>,
