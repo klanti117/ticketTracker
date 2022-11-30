@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Header from "./Header"
 import './index.css'
 import Tickets from "./Tickets"
@@ -23,7 +23,15 @@ const intialTicketsArr: Array<Ticket> = [
 ]
 
 function App() {
-  const [tickets, setTickets] = useState(intialTicketsArr)
+  const [tickets, setTickets] = useState(() => {
+    const locallySaved = localStorage.getItem('tickets')
+    const intialTicketsArrFromLocal = JSON.parse(locallySaved!)
+    return intialTicketsArrFromLocal || []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('tickets', JSON.stringify(tickets))
+  },[tickets])
 
   //Delete tickets
   const onDelete = (selectedTicket: Ticket) => {
