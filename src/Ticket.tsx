@@ -10,7 +10,7 @@ const Ticket: FC<ticketProp> =
 ({ ticketItem, onDelete, onToggleCompletion }) => {
     return (
         <div 
-            className={`ticket ${ticketItem.isComplete ? '':'not-complete'}`}
+            className={`ticket ${ticketItem.isComplete ? 'is-complete':'not-complete'}`}
             onDoubleClick={ () => onToggleCompletion(ticketItem)}>
             <h3>{ticketItem.text}
                 <FaTimes style={{color:'red', 
