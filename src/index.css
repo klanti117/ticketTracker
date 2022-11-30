@@ -65,6 +65,9 @@ body {
     border-left: 5px solid green;
 }
 
+.ticket.is-complete {
+    text-decoration: line-through;
+}
 .ticket h3 {
     display: flex;
     align-items: center;
