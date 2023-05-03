@@ -3,6 +3,7 @@ import Header from "./Header"
 import './index.css'
 import Tickets from "./Tickets"
 import AddTicket from "./AddTicket"
+import Toggle from "./Toggle"
 
 const intialTicketsArr: Array<Ticket> = [
   {
@@ -46,14 +47,15 @@ function App() {
 
   return (
     <div className="container">
-      <Header/>
+      {/* <Header/>
       <AddTicket onAdd={onAdd}/>
       {tickets.length>0 ? 
         <Tickets 
           tickets={tickets} 
           onDelete={onDelete}
           onToggleCompletion={onToggleCompletion}/>
-        :(" No tickets to show")}
+        :(" No tickets to show")} */}
+        <Toggle/>
     </div>
   )
 }
